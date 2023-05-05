@@ -268,6 +268,17 @@ module searchContribRoleUser 'core/security/role.bicep' = {
   }
 }
 
+//update search contrib role id
+module searchContribRoleUser2 'core/security/role.bicep' = {
+  scope: searchServiceResourceGroup
+  name: 'search-contrib-role-user2'
+  params: {
+    principalId: principalId
+    roleDefinitionId: '7ca78c08-252a-4471-8644-bb5ff32d4ba0'
+    principalType: 'User'
+  }
+}
+
 // SYSTEM IDENTITIES
 module openAiRoleBackend 'core/security/role.bicep' = {
   scope: openAiResourceGroup
