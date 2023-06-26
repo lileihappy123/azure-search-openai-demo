@@ -2,6 +2,8 @@ import { Outlet, NavLink, Link } from "react-router-dom";
 
 import github from "../../assets/github.svg";
 
+import logo from "../../assets/logo.png";
+
 import styles from "./Layout.module.css";
 
 const Layout = () => {
@@ -9,6 +11,10 @@ const Layout = () => {
         <div className={styles.layout}>
             <header className={styles.header} role={"banner"}>
                 <div className={styles.headerContainer}>
+                    <Link to="/">
+                        <img src={logo} alt="avanade logo" aria-label="Link to avanade" height="60px" />
+                    </Link>
+
                     <Link to="/" className={styles.headerTitleContainer}>
                         <h3 className={styles.headerTitle}>GPT + Enterprise data | Sample</h3>
                     </Link>
@@ -24,18 +30,7 @@ const Layout = () => {
                                     Ask a question
                                 </NavLink>
                             </li>
-                            <li className={styles.headerNavLeftMargin}>
-                                <a href="https://aka.ms/entgptsearch" target={"_blank"} title="Github repository link">
-                                    <img
-                                        src={github}
-                                        alt="Github logo"
-                                        aria-label="Link to github repository"
-                                        width="20px"
-                                        height="20px"
-                                        className={styles.githubLogo}
-                                    />
-                                </a>
-                            </li>
+                            <li className={styles.headerNavLeftMargin}></li>
                         </ul>
                     </nav>
                     <h4 className={styles.headerRightText}>Azure OpenAI + Cognitive Search</h4>
